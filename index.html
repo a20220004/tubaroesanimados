@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animação de Tubarões</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #1a2b36; /* Fundo oceânico */
+        }
+
+        .ocean {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .shark {
+            position: absolute;
+            bottom: 10%;
+            width: 100px;
+            height: 60px;
+            background: url('https://example.com/shark.png') no-repeat center center;
+            background-size: cover;
+            animation: swim 5s linear infinite;
+        }
+
+        /* Animação dos tubarões nadando */
+        @keyframes swim {
+            0% {
+                left: -150px;
+            }
+            50% {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            100% {
+                left: 100vw;
+            }
+        }
+
+        .shark:nth-child(2) {
+            animation-delay: 2s;
+        }
+    </style>
+</head>
+<body>
+    <div class="ocean">
+        <div class="shark"></div>
+        <div class="shark"></div>
+    </div>
+</body>
+</html>
